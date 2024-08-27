@@ -1,11 +1,11 @@
 version: 2
-
 sources:
   - name: raw
+    schema: gz_raw_data
     tables:
       - name: sales
-        description: "Tabla de ventas en bruto"
+        identifier: raw_gz_sales
       - name: product
-        description: "Tabla de productos en bruto"
+        identifier: raw_gz_product
       - name: ship
-        description: "Tabla de envíos en bruto"
+        identifier: raw_gz_ship

@@ -1,22 +1,17 @@
-with 
-
-source as (
-
-    select * from {{ source('raw', 'sales') }}
-
+WITH source AS (
+    SELECT * FROM {{ source('raw', 'sales') }}
 ),
 
-renamed as (
-
-    select
-    date_date
-    orders_id
-    products_id
-    revenue
-    quantity
-
-    from source
-
+renamed AS (
+    SELECT
+        date_date,
+        orders_id,
+        pdt_id AS products_id,
+        revenue,
+        quantity
+    FROM source
 )
 
-select * from renamed
+SELECT * FROM renamed
+LIMIT 1000;
+

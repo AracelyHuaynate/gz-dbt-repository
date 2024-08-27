@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: sales
+        description: "Tabla de ventas en bruto"
+      - name: product
+        description: "Tabla de productos en bruto"
+      - name: ship
+        description: "Tabla de envíos en bruto"
+
+

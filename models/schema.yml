@@ -9,5 +9,3 @@ sources:
         description: "Tabla de productos en bruto"
       - name: ship
         description: "Tabla de envíos en bruto"
-
-

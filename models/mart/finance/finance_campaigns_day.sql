@@ -1,7 +1,8 @@
 WITH finance_day AS (
     SELECT
         date_date,
-        ROUND(SUM(margin), 0) AS ads_margin,
+        COUNT(orders_id) AS nb_transactions,
+        ROUND(SUM(margin), 0) AS ads_margin,  -- Definir correctamente
         ROUND(AVG(revenue), 1) AS average_basket,
         ROUND(SUM(operational_margin), 0) AS operational_margin,
         ROUND(SUM(purchase_cost), 0) AS purchase_cost,
@@ -25,10 +26,9 @@ int_campaigns_day AS (
 SELECT
     f.date_date,
     f.nb_transactions,
-    f.revenue,
+    f.ads_margin,  -- Usar el alias correcto
     f.average_basket,
     f.operational_margin,
-    f.total_operational_margin,
     f.purchase_cost,
     f.shipping_fee,
     f.ship_cost,
@@ -36,8 +36,8 @@ SELECT
     c.ads_cost,
     c.ads_impressions,
     c.ads_clicks,
-    ROUND(f.operational_margin - c.ads_cost, 0) AS ads_margin
-FROM finance_day AS f
-LEFT JOIN int_campaigns_day AS c
+    ROUND(f.operational_margin - c.ads_cost, 0) AS calculated_ads_margin  -- Cambiar alias para evitar confusión
+FROM {{ ref("finance_days") }} AS f
+LEFT JOIN {{ ref("int_campaigns_day") }} AS c
     ON f.date_date = c.date_date
 ORDER BY f.date_date DESC

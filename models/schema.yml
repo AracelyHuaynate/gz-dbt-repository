@@ -183,3 +183,46 @@ models:
         description: "Número total de clics en los anuncios en la fecha dada."
         tests:
           - not_null
+          
+  - name: finance_days
+    description: "Este modelo agrega datos financieros por día, incluyendo margen operativo, costos y otros indicadores clave."
+    columns:
+      - name: date_date
+        description: "La fecha de la transacción."
+        tests:
+          - not_null
+          - unique
+      - name: nb_transactions
+        description: "Número de transacciones realizadas en el día."
+        tests:
+          - not_null
+      - name: ads_margin
+        description: "Margen publicitario total calculado para el día."
+        tests:
+          - not_null
+      - name: average_basket
+        description: "Valor promedio de la cesta de compras."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]  # Ajusta los valores aceptados según el contexto
+      - name: operational_margin
+        description: "Margen operativo total del día."
+        tests:
+          - not_null
+      - name: purchase_cost
+        description: "Costo total de compras del día."
+        tests:
+          - not_null
+      - name: shipping_fee
+        description: "Tarifa de envío total del día."
+        tests:
+          - not_null
+      - name: ship_cost
+        description: "Costo de envío calculado para el día."
+        tests:
+          - not_null
+      - name: quantity
+        description: "Cantidad total de productos vendidos."
+        tests:
+          - not_null

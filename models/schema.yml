@@ -50,6 +50,10 @@ sources:
         description: the cost of preparing the parcen in the werehouse
       - name: ship_cost
         description: the shipping cost paid by Greenweez to the carrier/transporter
+      - name: raw_gz_adwords
+      - name: raw_gz_bing
+      - name: raw_gz_criteo
+      - name: raw_gz_facebook
  
 models:
   - name: stg_raw_product

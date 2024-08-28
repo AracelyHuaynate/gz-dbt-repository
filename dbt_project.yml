@@ -39,6 +39,3 @@ models:
   my_new_project:
     mart:
       materialized: table
-    # Applies to all files under models/example/
-    example:
-      +materialized: table

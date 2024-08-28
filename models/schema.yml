@@ -51,9 +51,84 @@ sources:
       - name: ship_cost
         description: the shipping cost paid by Greenweez to the carrier/transporter
       - name: raw_gz_adwords
+        description: Raw data from Google AdWords
+        columns:
+          - name: date_date
+            description: Date of the ad
+          - name: paid_source
+            description: The source of the advertisement
+          - name: campaign_key
+            description: The campaign key
+          - name: campaign_name
+            description: The name of the campaign
+          - name: ads_cost
+            description: Cost of the advertisement
+          - name: impression
+            description: Number of impressions
+          - name: click
+            description: Number of clicks
+            tests:
+              - not_null
+
       - name: raw_gz_bing
+        description: Raw data from Bing Ads
+        columns:
+          - name: date_date
+            description: Date of the ad
+          - name: paid_source
+            description: The source of the advertisement
+          - name: campaign_key
+            description: The campaign key
+          - name: campaign_name
+            description: The name of the campaign
+          - name: ads_cost
+            description: Cost of the advertisement
+          - name: impression
+            description: Number of impressions
+          - name: click
+            description: Number of clicks
+            tests:
+              - not_null
+
       - name: raw_gz_criteo
+        description: Raw data from Criteo
+        columns:
+          - name: date_date
+            description: Date of the ad
+          - name: paid_source
+            description: The source of the advertisement
+          - name: campaign_key
+            description: The campaign key
+          - name: campaign_name
+            description: The name of the campaign
+          - name: ads_cost
+            description: Cost of the advertisement
+          - name: impression
+            description: Number of impressions
+          - name: click
+            description: Number of clicks
+            tests:
+              - not_null
+
       - name: raw_gz_facebook
+        description: Raw data from Facebook Ads
+        columns:
+          - name: date_date
+            description: Date of the ad
+          - name: paid_source
+            description: The source of the advertisement
+          - name: campaign_key
+            description: The campaign key
+          - name: campaign_name
+            description: The name of the campaign
+          - name: ads_cost
+            description: Cost of the advertisement
+          - name: impression
+            description: Number of impressions
+          - name: click
+            description: Number of clicks
+            tests:
+              - not_null
  
 models:
   - name: stg_raw_product

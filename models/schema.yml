@@ -162,7 +162,7 @@ models:
           column_name: revenue
       - not_null:
           column_name: quantity
-        - name: int_campaign_day
+      - name: int_campaign_day
     description: "Modelo que agrega los costos de publicidad, impresiones y clics por fecha."
     columns:
       - name: date_date
